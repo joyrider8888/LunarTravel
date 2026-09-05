@@ -1,0 +1,9 @@
+import Link from 'next/link';
+
+const vehicles = [
+  { name: 'Mercedes GLC 200d', label: 'SUV Fun', image: '/media/fleet-suv-enhanced.png', text: 'A confident, quiet space for longer roads, airport runs and the freedom to take the scenic route.' },
+  { name: 'BMW X3', label: 'Urban Beat', image: '/media/fleet-bmw-enhanced.png', text: 'A composed city companion for meetings, events and days that move at a faster pace.' },
+  { name: 'Mercedes V-Class', label: 'Bus Flair', image: '/media/fleet-van-enhanced.png', text: 'Room to bring everyone along, without giving up the calm, considered feel of Lunar.' },
+];
+
+export default function FleetPage() { return <main><section className="section section-dark" style={{ paddingTop: 180 }}><div className="eyebrow">Lunar Travel / Fleet</div><h1 style={{ maxWidth: 900, margin: '50px 0 30px', font: '400 clamp(4rem, 10vw, 10rem)/.86 Newsreader, serif', letterSpacing: '-.06em' }}>The right space<br />for the road.</h1><p className="hero-copy">Three vehicles. One standard of care.</p></section>{vehicles.map((vehicle, index) => <section className={`section ${index % 2 ? 'section-light' : 'section-dark'}`} key={vehicle.name}><div className="section-head"><div><div className="eyebrow">0{index + 1} / {vehicle.label}</div><h2>{vehicle.name}</h2></div><p>{vehicle.text}</p></div><div style={{ marginTop: 70, minHeight: 560, position: 'relative', overflow: 'hidden' }}><img src={vehicle.image} alt={vehicle.name} style={{ width: '100%', height: '100%', minHeight: 560, objectFit: 'cover', filter: 'saturate(.72)' }} /></div></section>)}<section className="section section-light"><div className="section-head"><div><div className="eyebrow">Ready when you are</div><h2>Let’s plan the way.</h2></div><Link className="button" href="/enquire">Request a trip</Link></div></section></main>; }
