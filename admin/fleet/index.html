@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet | Admin | Lunar Travel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin">
+<aside class="admin-sidebar">
+  <div class="admin-brand"><img src="/media/logo.png" alt=""><span>Lunar Admin</span></div>
+  <nav class="admin-nav" aria-label="Admin navigation">
+    <a href="/admin/">Enquiries</a>
+    <a href="/admin/fleet/" class="active">Fleet</a>
+    <a href="/admin/coverage/">Coverage</a>
+  </nav>
+  <div class="admin-sidebar-foot"><a href="/">&larr; Back to site</a></div>
+</aside>
+<main class="admin-main">
+  <div class="admin-topbar">
+    <div class="eyebrow">Lunar Travel / Admin</div>
+    <div class="admin-user"><div class="admin-avatar">LT</div>Operations</div>
+  </div>
+
+  <div class="admin-header">
+    <div>
+      <h1>Fleet</h1>
+      <p>Vehicles available for trip assignment.</p>
+    </div>
+    <button class="admin-btn admin-btn-primary" type="button" disabled>+ Add vehicle</button>
+  </div>
+
+  <div class="admin-stats">
+    <div class="admin-stat"><div class="label">Vehicles</div><div class="value">3</div></div>
+    <div class="admin-stat"><div class="label">Active</div><div class="value">2</div></div>
+    <div class="admin-stat"><div class="label">In maintenance</div><div class="value">1</div></div>
+    <div class="admin-stat"><div class="label">Trips this week</div><div class="value">8</div></div>
+  </div>
+
+  <div class="admin-panel">
+    <div class="admin-panel-head">
+      <h2>All vehicles</h2>
+      <button class="admin-btn" type="button" disabled>Filter</button>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Vehicle</th>
+            <th>Class</th>
+            <th>Seats</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="thumb" src="/media/fleet-suv-enhanced.png" alt=""></td>
+            <td>Mercedes GLC 200d</td>
+            <td class="muted">SUV Fun</td>
+            <td class="muted">5</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Retire</a></div></td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="/media/fleet-bmw-enhanced.png" alt=""></td>
+            <td>BMW X3</td>
+            <td class="muted">Urban Beat</td>
+            <td class="muted">5</td>
+            <td><span class="badge badge-maintenance">Maintenance</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Retire</a></div></td>
+          </tr>
+          <tr>
+            <td><img class="thumb" src="/media/fleet-van-enhanced.png" alt=""></td>
+            <td>Mercedes V-Class</td>
+            <td class="muted">Bus Flair</td>
+            <td class="muted">7</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Retire</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</body>
+</html>

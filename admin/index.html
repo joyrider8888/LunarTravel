@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | Lunar Travel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin">
+<aside class="admin-sidebar">
+  <div class="admin-brand"><img src="/media/logo.png" alt=""><span>Lunar Admin</span></div>
+  <nav class="admin-nav" aria-label="Admin navigation">
+    <a href="/admin/" class="active">Enquiries</a>
+    <a href="/admin/fleet/">Fleet</a>
+    <a href="/admin/coverage/">Coverage</a>
+  </nav>
+  <div class="admin-sidebar-foot"><a href="/">&larr; Back to site</a></div>
+</aside>
+<main class="admin-main">
+  <div class="admin-topbar">
+    <div class="eyebrow">Lunar Travel / Admin</div>
+    <div class="admin-user"><div class="admin-avatar">LT</div>Operations</div>
+  </div>
+
+  <div class="admin-header">
+    <div>
+      <h1>Enquiries</h1>
+      <p>Trip requests submitted through the public enquiry form.</p>
+    </div>
+    <button class="admin-btn admin-btn-primary" type="button" disabled>+ New enquiry</button>
+  </div>
+
+  <div class="admin-stats">
+    <div class="admin-stat"><div class="label">New</div><div class="value">3</div></div>
+    <div class="admin-stat"><div class="label">Contacted</div><div class="value">2</div></div>
+    <div class="admin-stat"><div class="label">Booked</div><div class="value">1</div></div>
+    <div class="admin-stat"><div class="label">This month</div><div class="value">6</div></div>
+  </div>
+
+  <div class="admin-panel">
+    <div class="admin-panel-head">
+      <h2>All enquiries</h2>
+      <button class="admin-btn" type="button" disabled>Filter</button>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Message</th>
+            <th>Submitted</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Naledi Khumalo</td>
+            <td>naledi.k@example.com<br><span class="muted">082 314 0092</span></td>
+            <td class="muted">Airport transfer, OR Tambo to Sandton, party of 2, Thu morning.</td>
+            <td class="muted">05 Sep, 09:12</td>
+            <td><span class="badge badge-new">New</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+          <tr>
+            <td>Thabo Mahlangu</td>
+            <td>t.mahlangu@example.com<br><span class="muted">071 552 9981</span></td>
+            <td class="muted">Multi-day trip Joburg &rarr; Kimberley, need the V-Class, 6 pax.</td>
+            <td class="muted">04 Sep, 17:40</td>
+            <td><span class="badge badge-new">New</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+          <tr>
+            <td>Amira Patel</td>
+            <td>amira.patel@example.com<br><span class="muted">083 220 6614</span></td>
+            <td class="muted">Weekend in the Free State, flexible on dates, prefers the X3.</td>
+            <td class="muted">03 Sep, 11:05</td>
+            <td><span class="badge badge-contacted">Contacted</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+          <tr>
+            <td>Sipho Ndlovu</td>
+            <td>sipho.n@example.com<br><span class="muted">079 803 4471</span></td>
+            <td class="muted">Return trip to Kuruman for a family event, needs quote by Friday.</td>
+            <td class="muted">02 Sep, 14:22</td>
+            <td><span class="badge badge-contacted">Contacted</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+          <tr>
+            <td>Julia van der Merwe</td>
+            <td>julia.vdm@example.com<br><span class="muted">084 117 2230</span></td>
+            <td class="muted">Confirmed: Pretoria &rarr; Bloemfontein, GLC 200d, next Tuesday.</td>
+            <td class="muted">01 Sep, 08:57</td>
+            <td><span class="badge badge-booked">Booked</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+          <tr>
+            <td>Kagiso Modise</td>
+            <td>kagiso.m@example.com<br><span class="muted">061 445 7783</span></td>
+            <td class="muted">General question about coverage in Northern Cape, no reply sent.</td>
+            <td class="muted">29 Aug, 19:03</td>
+            <td><span class="badge badge-archived">Archived</span></td>
+            <td><div class="row-actions"><a href="#">View</a><a href="#">Archive</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</body>
+</html>

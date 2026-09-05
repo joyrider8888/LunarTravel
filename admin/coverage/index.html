@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage | Admin | Lunar Travel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin">
+<aside class="admin-sidebar">
+  <div class="admin-brand"><img src="/media/logo.png" alt=""><span>Lunar Admin</span></div>
+  <nav class="admin-nav" aria-label="Admin navigation">
+    <a href="/admin/">Enquiries</a>
+    <a href="/admin/fleet/">Fleet</a>
+    <a href="/admin/coverage/" class="active">Coverage</a>
+  </nav>
+  <div class="admin-sidebar-foot"><a href="/">&larr; Back to site</a></div>
+</aside>
+<main class="admin-main">
+  <div class="admin-topbar">
+    <div class="eyebrow">Lunar Travel / Admin</div>
+    <div class="admin-user"><div class="admin-avatar">LT</div>Operations</div>
+  </div>
+
+  <div class="admin-header">
+    <div>
+      <h1>Coverage</h1>
+      <p>Regions Lunar Travel currently operates in.</p>
+    </div>
+    <button class="admin-btn admin-btn-primary" type="button" disabled>+ Add region</button>
+  </div>
+
+  <div class="admin-stats">
+    <div class="admin-stat"><div class="label">Regions</div><div class="value">3</div></div>
+    <div class="admin-stat"><div class="label">Active</div><div class="value">2</div></div>
+    <div class="admin-stat"><div class="label">Seasonal</div><div class="value">1</div></div>
+    <div class="admin-stat"><div class="label">Provinces</div><div class="value">3</div></div>
+  </div>
+
+  <div class="admin-panel">
+    <div class="admin-panel-head">
+      <h2>All regions</h2>
+      <button class="admin-btn" type="button" disabled>Filter</button>
+    </div>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Notes</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gauteng</td>
+            <td class="muted">Johannesburg, Pretoria and the routes between them.</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Disable</a></div></td>
+          </tr>
+          <tr>
+            <td>Free State</td>
+            <td class="muted">Long-distance travel with time and distance properly considered.</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Disable</a></div></td>
+          </tr>
+          <tr>
+            <td>Northern Cape</td>
+            <td class="muted">Further journeys, planned with the same quiet precision.</td>
+            <td><span class="badge badge-seasonal">Seasonal</span></td>
+            <td><div class="row-actions"><a href="#">Edit</a><a href="#">Disable</a></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</body>
+</html>
