@@ -23,8 +23,6 @@ button, input, select, textarea { font: inherit; }
 .nav a { opacity: .78; transition: opacity .2s; }
 .nav a:hover, .nav a:focus-visible { opacity: 1; }
 .menu-button { display: none; background: transparent; border: 1px solid var(--white-line); color: var(--ivory); padding: 10px 13px; font: 10px 'DM Mono', monospace; letter-spacing: .14em; }
-.nav-admin { padding: 7px 14px; border: 1px solid var(--white-line); border-radius: 999px; opacity: .55; }
-.nav-admin:hover, .nav-admin:focus-visible { opacity: 1; border-color: var(--ivory); }
 
 .hero { min-height: 100dvh; position: relative; display: grid; align-items: end; overflow: hidden; background: var(--ink); }
 .hero-media { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,27,38,.72), rgba(17,27,38,.18)), url('/media/hero-gemini-enhanced.jpg') center/cover; filter: saturate(.72); }
@@ -160,7 +158,6 @@ a.service-row:hover, a.service-row:focus-visible { padding-left: 14px; }
   .site-header.menu-open { background: var(--ink); }
   .site-header.menu-open .nav { display: flex; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; padding: 8px 6vw 24px; background: var(--ink); border-top: 1px solid var(--white-line); }
   .site-header.menu-open .nav a { padding: 16px 0; border-bottom: 1px solid var(--white-line); font-size: 12px; }
-  .site-header.menu-open .nav .nav-admin { align-self: flex-start; margin-top: 16px; border-bottom: 1px solid var(--white-line); }
   .policy-head { padding-top: 140px; }
   .footer-bottom .footer-links { margin-top: 12px; }
 }
