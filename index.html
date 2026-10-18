@@ -5,15 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunar Travel | The road, reconsidered</title>
 <meta name="description" content="Private travel, considered properly. Lunar Travel moves you through South Africa with discretion, comfort and precision.">
+<meta property="og:site_name" content="Lunar Travel">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lunar Travel | The road, reconsidered">
+<meta property="og:description" content="Private travel, considered properly. Lunar Travel moves you through South Africa with discretion, comfort and precision.">
+<meta name="theme-color" content="#111b26">
+<link rel="icon" href="/media/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <header class="site-header">
   <a href="/" aria-label="Lunar Travel home"><img class="logo" src="/media/logo.png" alt="Lunar Travel"></a>
-  <nav class="nav" aria-label="Primary navigation">
+  <nav class="nav" id="primary-nav" aria-label="Primary navigation">
     <a href="/#services">Services</a><a href="/#standard">The Lunar Standard</a><a href="/fleet/">Fleet</a><a href="/enquire/">Request a trip</a><a href="/admin/" class="nav-admin">Admin</a>
   </nav>
-  <button class="menu-button" type="button" aria-label="Open navigation">Menu</button>
+  <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">Menu</button>
 </header>
 <main>
   <section class="hero">
@@ -49,10 +55,10 @@
       <p>From a quiet airport arrival to a long road across the country, every journey is shaped around you.</p>
     </div>
     <div class="service-list">
-      <div class="service-row"><span class="service-number">01</span><h3>Airport transfers</h3><span>Explore ↗</span></div>
-      <div class="service-row"><span class="service-number">02</span><h3>Corporate travel</h3><span>Explore ↗</span></div>
-      <div class="service-row"><span class="service-number">03</span><h3>Private events</h3><span>Explore ↗</span></div>
-      <div class="service-row"><span class="service-number">04</span><h3>Long-distance journeys</h3><span>Explore ↗</span></div>
+      <a class="service-row" href="/enquire/?service=airport"><span class="service-number">01</span><h3>Airport transfers</h3><span>Enquire ↗</span></a>
+      <a class="service-row" href="/enquire/?service=corporate"><span class="service-number">02</span><h3>Corporate travel</h3><span>Enquire ↗</span></a>
+      <a class="service-row" href="/enquire/?service=events"><span class="service-number">03</span><h3>Private events</h3><span>Enquire ↗</span></a>
+      <a class="service-row" href="/enquire/?service=long-distance"><span class="service-number">04</span><h3>Long-distance journeys</h3><span>Enquire ↗</span></a>
     </div>
   </section>
 
@@ -122,11 +128,11 @@
         <h2>Tell us where you’re going.</h2>
         <p class="hero-copy">We’ll take it from there.</p>
       </div>
-      <form class="form">
+      <form class="form" id="home-form">
         <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text"></div>
         <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email"></div>
         <div class="field"><label for="message">Tell us about the trip</label><textarea id="message" name="message"></textarea></div>
-        <a class="button" href="/enquire/">Continue to enquiry</a>
+        <a class="button" id="continue-enquiry" href="/enquire/">Continue to enquiry</a>
       </form>
     </div>
   </section>
@@ -142,6 +148,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Lunar Travel</span>
+      <span class="footer-links"><a href="/privacy/">Privacy policy</a><a href="/cookies/">Cookie policy</a></span>
       <span>Gauteng · Free State · Northern Cape</span>
     </div>
   </footer>
