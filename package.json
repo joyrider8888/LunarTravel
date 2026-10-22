@@ -1,0 +1,9 @@
+{
+  "name": "lunartravel",
+  "private": true,
+  "version": "1.2.0",
+  "description": "Lunar Travel static site with a password-protected admin area.",
+  "dependencies": {
+    "@vercel/functions": "^2.0.0"
+  }
+}
