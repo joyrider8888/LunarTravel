@@ -121,12 +121,58 @@
         if (message && !firstBad) firstBad = fields[key];
       });
       if (firstBad) { firstBad.focus(); return; }
-      // Sending is not connected yet (planned for v1.2). Be honest and keep the visitor's text.
-      status.innerHTML = 'We could not send your enquiry online yet, but nothing you typed has been lost. ' +
-        'Please email <a href="mailto:hello@lunartravel.co">hello@lunartravel.co</a> or call <a href="tel:+27110000000">+27 11 000 0000</a>.';
+      send();
+    });
+
+    var button = form.querySelector('button[type="submit"]');
+    var sending = false;
+    var fallback = 'Please email <a href="mailto:hello@lunartravel.co">hello@lunartravel.co</a> or call <a href="tel:+27110000000">+27 11 000 0000</a>.';
+    var showStatus = function (html) {
+      status.innerHTML = html;
       status.hidden = false;
       status.focus();
-    });
+    };
+    var send = function () {
+      if (sending) return;
+      sending = true;
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      status.hidden = true;
+      var done = function () { sending = false; button.disabled = false; button.textContent = 'Send enquiry'; };
+      var payload = {
+        name: fields.name.value, email: fields.email.value, phone: fields.phone.value, message: fields.journey.value,
+        company: form.elements['company'] ? form.elements['company'].value : ''
+      };
+      var controller = typeof AbortController === 'function' ? new AbortController() : null;
+      var timer = controller ? setTimeout(function () { controller.abort(); }, 15000) : null;
+      fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: controller ? controller.signal : undefined
+      }).then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (json) { return { res: res, json: json }; });
+      }).then(function (r) {
+        if (r.res.ok) {
+          form.reset();
+          showStatus('Thank you. Your enquiry is with us and we will reply by email.');
+        } else if (r.res.status === 422 && r.json.fields) {
+          var map = { name: 'name', email: 'email', phone: 'phone', message: 'journey' };
+          var first = null;
+          Object.keys(r.json.fields).forEach(function (k) {
+            var key = map[k];
+            if (key) { setError(key, r.json.fields[k]); if (!first) first = fields[key]; }
+          });
+          if (first) first.focus();
+        } else if (r.res.status === 429) {
+          showStatus('Too many attempts. Please wait a few minutes and try again. ' + fallback);
+        } else {
+          showStatus('We could not send your enquiry, but nothing you typed has been lost. Press Send enquiry to try again. ' + fallback);
+        }
+      }).catch(function () {
+        showStatus('We could not reach the server, but nothing you typed has been lost. Check your connection and press Send enquiry to try again. ' + fallback);
+      }).then(function () { if (timer) clearTimeout(timer); done(); });
+    };
   }
 
   /* Cookie notice. Optional cookies (analytics) will only ever load after "accepted". */

@@ -162,3 +162,6 @@ a.service-row:hover, a.service-row:focus-visible { padding-left: 14px; }
   .footer-bottom .footer-links { margin-top: 12px; }
 }
 @media (max-width: 800px) and (min-width: 0) { .site-header.menu-open .menu-button { background: var(--ivory); color: var(--ink); } }
+
+.field-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form .button:disabled { opacity: .55; cursor: progress; }
