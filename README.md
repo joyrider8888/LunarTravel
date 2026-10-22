@@ -37,3 +37,7 @@ The hero intentionally uses still imagery only. `Thami.mp4` is not part of the i
 ## Admin password
 
 `/admin/` is protected by `middleware.js` using HTTP Basic auth. Set `ADMIN_PASSWORD_SHA256` in Vercel to the SHA-256 hex fingerprint of the password (`printf '%s' 'the-password' | sha256sum`). The password itself is never stored in the repository. If the variable is missing, `/admin/` stays closed.
+
+## Live enquiries
+
+`api/enquiry.js` receives the enquiry form. It sends nothing until settings exist in Vercel: `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` (run `supabase/enquiries.sql` once) to store enquiries, and/or `RESEND_API_KEY`, `ENQUIRY_TO` and `ENQUIRY_FROM` to email the team. With neither, the form shows the email and phone fallback.
