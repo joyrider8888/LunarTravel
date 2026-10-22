@@ -41,14 +41,13 @@ function escapeHtml(s) {
 }
 
 async function store(data, env) {
+  const key = env.SUPABASE_SERVICE_KEY.trim();
+  const headers = { apikey: key, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+  // Legacy service_role keys are JWTs and go in Authorization too; new sb_secret_ keys are not JWTs and must only be sent as apikey.
+  if (key.startsWith('eyJ')) headers.Authorization = 'Bearer ' + key;
   const res = await fetch(env.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/enquiries', {
     method: 'POST',
-    headers: {
-      apikey: env.SUPABASE_SERVICE_KEY,
-      Authorization: 'Bearer ' + env.SUPABASE_SERVICE_KEY,
-      'Content-Type': 'application/json',
-      Prefer: 'return=minimal',
-    },
+    headers,
     body: JSON.stringify({ name: data.name, email: data.email, phone: data.phone || null, message: data.message, status: 'new' }),
   });
   if (!res.ok) throw new Error('store ' + res.status);
