@@ -23,6 +23,7 @@ privacy/index.html   /privacy  — privacy policy
 cookies/index.html   /cookies  — cookie policy
 404.html             not-found page
 robots.txt, sitemap.xml  search engine files
+middleware.js        password check for /admin/ (Vercel Routing Middleware)
 css/styles.css       all site styling
 js/main.js           shared script: mobile menu, enquiry form validation and draft carry-over, cookie notice
 media/               images (logo, hero, fleet photos)
@@ -32,3 +33,7 @@ legacy/              the previous Next.js/React/TypeScript implementation, kept 
 The enquiry form validates in the browser and keeps what was typed, but sending is not connected yet (planned for v1.2): on submit it shows the email and phone fallback.
 
 The hero intentionally uses still imagery only. `Thami.mp4` is not part of the implementation.
+
+## Admin password
+
+`/admin/` is protected by `middleware.js` using HTTP Basic auth. Set `ADMIN_PASSWORD_SHA256` in Vercel to the SHA-256 hex fingerprint of the password (`printf '%s' 'the-password' | sha256sum`). The password itself is never stored in the repository. If the variable is missing, `/admin/` stays closed.
